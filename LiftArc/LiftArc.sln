@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LiftArc", "LiftArc\LiftArc.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatenbankzugriffTest", "DatenbankzugriffTest\DatenbankzugriffTest.csproj", "{D1407CBA-31DC-413C-B0F8-A8D370E9B26E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenFoodsFactsAPIZugriff", "OpenFoodsFactsAPIZugriff\OpenFoodsFactsAPIZugriff.csproj", "{896B85F3-F6EB-4F8B-9330-259D2E57604B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{D1407CBA-31DC-413C-B0F8-A8D370E9B26E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D1407CBA-31DC-413C-B0F8-A8D370E9B26E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D1407CBA-31DC-413C-B0F8-A8D370E9B26E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{896B85F3-F6EB-4F8B-9330-259D2E57604B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{896B85F3-F6EB-4F8B-9330-259D2E57604B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{896B85F3-F6EB-4F8B-9330-259D2E57604B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{896B85F3-F6EB-4F8B-9330-259D2E57604B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
