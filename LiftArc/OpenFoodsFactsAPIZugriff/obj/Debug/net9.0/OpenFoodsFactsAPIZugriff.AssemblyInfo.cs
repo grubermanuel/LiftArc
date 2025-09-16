@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("OpenFoodsFactsAPIZugriff")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7c822ef279b9adb40548f6e0679c196862f31ff4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+50699b34ecaf92bb598c263a2707e33eb6cea425")]
 [assembly: System.Reflection.AssemblyProductAttribute("OpenFoodsFactsAPIZugriff")]
 [assembly: System.Reflection.AssemblyTitleAttribute("OpenFoodsFactsAPIZugriff")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

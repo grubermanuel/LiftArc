@@ -1,4 +1,4 @@
-@page "/workouts"
+@page "/"
 @using LiftArc.Models 
 @using LiftArc.Services 
 @inject WorkoutService WorkoutService
@@ -57,8 +57,8 @@
             var plan = new WorkoutPlan { Name = newPlanName };
             await WorkoutService.AddWorkoutAsync(plan);
 
-            // Liste neu zuweisen, damit Blazor rendert
-            workouts = workouts.Append(plan).ToList();
+            // Liste komplett aus Service aktualisieren
+            workouts = await WorkoutService.GetAllWorkoutsAsync();
 
             newPlanName = "";
         }
