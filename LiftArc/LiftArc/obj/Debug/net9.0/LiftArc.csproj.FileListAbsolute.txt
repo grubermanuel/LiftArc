@@ -16,7 +16,6 @@ C:\Users\Manuel Gruber\Documents\GitHub\LiftArc\LiftArc\LiftArc\obj\Debug\net9.0
 C:\Users\Manuel Gruber\Documents\GitHub\LiftArc\LiftArc\LiftArc\obj\Debug\net9.0\scopedcss\Components\Layout\NavMenu.razor.rz.scp.css
 C:\Users\Manuel Gruber\Documents\GitHub\LiftArc\LiftArc\LiftArc\obj\Debug\net9.0\scopedcss\bundle\LiftArc.styles.css
 C:\Users\Manuel Gruber\Documents\GitHub\LiftArc\LiftArc\LiftArc\obj\Debug\net9.0\scopedcss\projectbundle\LiftArc.bundle.scp.css
-C:\Users\Manuel Gruber\Documents\GitHub\LiftArc\LiftArc\LiftArc\obj\Debug\net9.0\compressed\xd0hijejxd-khy4lop6wu.gz
 C:\Users\Manuel Gruber\Documents\GitHub\LiftArc\LiftArc\LiftArc\obj\Debug\net9.0\compressed\97x6tewo24-t1cqhe9u97.gz
 C:\Users\Manuel Gruber\Documents\GitHub\LiftArc\LiftArc\LiftArc\obj\Debug\net9.0\compressed\ml5wc53f6u-c2jlpeoesf.gz
 C:\Users\Manuel Gruber\Documents\GitHub\LiftArc\LiftArc\LiftArc\obj\Debug\net9.0\compressed\ukmd76ut7n-sejl45xvog.gz
@@ -77,3 +76,5 @@ C:\Users\Manuel Gruber\Documents\GitHub\LiftArc\LiftArc\LiftArc\obj\Debug\net9.0
 C:\Users\Manuel Gruber\Documents\GitHub\LiftArc\LiftArc\LiftArc\obj\Debug\net9.0\LiftArc.pdb
 C:\Users\Manuel Gruber\Documents\GitHub\LiftArc\LiftArc\LiftArc\obj\Debug\net9.0\LiftArc.genruntimeconfig.cache
 C:\Users\Manuel Gruber\Documents\GitHub\LiftArc\LiftArc\LiftArc\obj\Debug\net9.0\ref\LiftArc.dll
+C:\Users\Manuel Gruber\Documents\GitHub\LiftArc\LiftArc\LiftArc\obj\Debug\net9.0\LiftArc.sourcelink.json
+C:\Users\Manuel Gruber\Documents\GitHub\LiftArc\LiftArc\LiftArc\obj\Debug\net9.0\compressed\xd0hijejxd-mdfhhglae7.gz

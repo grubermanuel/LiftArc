@@ -2,57 +2,87 @@
 @using LiftArc.Models 
 @using LiftArc.Services 
 @inject WorkoutService WorkoutService
+@rendermode InteractiveServer
 
+<h1>🏋️ LiftArc Trainingspläne</h1>
 
-<PageTitle>LiftArcProj - Trainingspläne</PageTitle>
+<div class="new-workout">
+    <input placeholder="Name des Trainingsplans" @bind="newPlanName" />
+    <button class="btn-neon" @onclick="CreateWorkout">+ Trainingsplan erstellen</button>
+</div>
 
-<div class="main-container">
-    <header class="header">
-        <h1>🏋️ LiftArcProj Trainingspläne</h1>
-    </header>
+<hr />
 
-    <div class="workout-list">
-        @if (workouts == null)
+@foreach (var plan in workouts)
+{
+    <div class="workout-card">
+        <h2>@plan.Name</h2>
+
+        @if (plan.Exercises.Any())
         {
-            <p>Lade Trainingspläne...</p>
-        }
-        else if (!workouts.Any())
-        {
-            <p>Keine Trainingspläne gefunden.</p>
+            <ul>
+                @foreach (var ex in plan.Exercises)
+                {
+                    <li>@ex.Name – @ex.Sets Sätze – @ex.WeightKg kg</li>
+                }
+            </ul>
         }
         else
         {
-            @foreach (var workout in workouts)
-            {
-                <div class="workout-card">
-                    <h2>@workout.Name</h2>
-                    <p>@workout.Description</p>
-                    <button class="btn-neon" @onclick="() => StartWorkout(workout.Id)">Start</button>
-                </div>
-            }
+            <p>(noch keine Übungen)</p>
         }
-    </div>
 
-    <button class="btn-neon" @onclick="CreateNewWorkout">+ Neuer Trainingsplan</button>
-</div>
+        <div class="new-exercise">
+            <input placeholder="Übung" @bind="plan.NewExerciseName" />
+            <input type="number" placeholder="Sätze" @bind="plan.NewExerciseSets" />
+            <input type="number" placeholder="Gewicht (kg)" @bind="plan.NewExerciseWeight" />
+            <button class="btn-neon" @onclick="() => AddExercise(plan)">+ Übung hinzufügen</button>
+        </div>
+    </div>
+}
 
 @code {
-    private List<WorkoutPlan> workouts; // ✅ Feldname klein, kein Konflikt
+    private List<WorkoutPlan> workouts = new();
+    private string newPlanName;
 
     protected override async Task OnInitializedAsync()
     {
         workouts = await WorkoutService.GetAllWorkoutsAsync();
     }
 
-    private void StartWorkout(int workoutId)
+    private async Task CreateWorkout()
     {
-        Console.WriteLine($"Workout {workoutId} gestartet!");
+        if (!string.IsNullOrWhiteSpace(newPlanName))
+        {
+            var plan = new WorkoutPlan { Name = newPlanName };
+            await WorkoutService.AddWorkoutAsync(plan);
+
+            // Liste neu zuweisen, damit Blazor rendert
+            workouts = workouts.Append(plan).ToList();
+
+            newPlanName = "";
+        }
     }
 
-    private void CreateNewWorkout()
+
+    private void AddExercise(WorkoutPlan plan)
     {
-        var newWorkout = new WorkoutPlan { Name = "Neuer Plan", Description = "Beschreibung" };
-        WorkoutService.AddWorkoutAsync(newWorkout);
-        workouts.Add(newWorkout);
+        if (!string.IsNullOrWhiteSpace(plan.NewExerciseName) && plan.NewExerciseSets > 0)
+        {
+            var newExercise = new Exercise
+            {
+                Name = plan.NewExerciseName,
+                Sets = plan.NewExerciseSets,
+                WeightKg = plan.NewExerciseWeight
+            };
+
+            // ⚡ neue Liste zuweisen, damit Blazor neu rendert
+            plan.Exercises = plan.Exercises.Append(newExercise).ToList();
+
+            plan.NewExerciseName = "";
+            plan.NewExerciseSets = 0;
+            plan.NewExerciseWeight = 0;
+        }
     }
+
 }

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "qdOEmdhueQS5irxq7KLoTiU4KNvLl9SCYwu9BTgYX6Y=",
+  "Hash": "j9wAum1i41fXuzsp7ANkD2PJGCNbRLCbwIcZeBJvIz4=",
   "Source": "LiftArc",
   "BasePath": "_content/LiftArc",
   "Mode": "Default",
@@ -878,12 +878,12 @@
       "OriginalItemSpec": "C:\\Users\\Manuel Gruber\\Documents\\GitHub\\LiftArc\\LiftArc\\LiftArc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Users\\Manuel Gruber\\Documents\\GitHub\\LiftArc\\LiftArc\\LiftArc\\obj\\Debug\\net9.0\\compressed\\xd0hijejxd-khy4lop6wu.gz",
+      "Identity": "C:\\Users\\Manuel Gruber\\Documents\\GitHub\\LiftArc\\LiftArc\\LiftArc\\obj\\Debug\\net9.0\\compressed\\xd0hijejxd-mdfhhglae7.gz",
       "SourceId": "LiftArc",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Manuel Gruber\\Documents\\GitHub\\LiftArc\\LiftArc\\LiftArc\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/LiftArc",
-      "RelativePath": "app#[.{fingerprint=khy4lop6wu}]?.css.gz",
+      "RelativePath": "app#[.{fingerprint=mdfhhglae7}]?.css.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -892,8 +892,8 @@
       "RelatedAsset": "C:\\Users\\Manuel Gruber\\Documents\\GitHub\\LiftArc\\LiftArc\\LiftArc\\wwwroot\\app.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "596e5mu3rg",
-      "Integrity": "KfTtGgOr4gFqWP6bDC3erwKnY0fchsCFGM8SFQeyGO0=",
+      "Fingerprint": "jm43lyg6yk",
+      "Integrity": "1UjRDPvkDQnc4StNagL/0UFkw43i3YrR4E41/D3xa64=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\Manuel Gruber\\Documents\\GitHub\\LiftArc\\LiftArc\\LiftArc\\wwwroot\\app.css"
@@ -1060,8 +1060,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "khy4lop6wu",
-      "Integrity": "aNPcLFwdCCGS2v1guSR64Htd4Ly5uclT7taAptnMPbs=",
+      "Fingerprint": "mdfhhglae7",
+      "Integrity": "5tYg1RASKqHljxlITVjqDU+P0BzT/ZWv6Dh0zfMXPxY=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\app.css"
@@ -2015,12 +2015,12 @@
   "Endpoints": [
     {
       "Route": "app.css",
-      "AssetFile": "C:\\Users\\Manuel Gruber\\Documents\\GitHub\\LiftArc\\LiftArc\\LiftArc\\obj\\Debug\\net9.0\\compressed\\xd0hijejxd-khy4lop6wu.gz",
+      "AssetFile": "C:\\Users\\Manuel Gruber\\Documents\\GitHub\\LiftArc\\LiftArc\\LiftArc\\obj\\Debug\\net9.0\\compressed\\xd0hijejxd-mdfhhglae7.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000636132316"
+          "Quality": "0.003787878788"
         }
       ],
       "ResponseHeaders": [
@@ -2030,15 +2030,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1571"
+          "Value": "263"
         },
         {
           "Name": "ETag",
-          "Value": "\"KfTtGgOr4gFqWP6bDC3erwKnY0fchsCFGM8SFQeyGO0=\""
+          "Value": "\"1UjRDPvkDQnc4StNagL/0UFkw43i3YrR4E41/D3xa64=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 16 Sep 2025 06:52:41 GMT"
+          "Value": "Tue, 16 Sep 2025 11:31:05 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2058,13 +2058,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"aNPcLFwdCCGS2v1guSR64Htd4Ly5uclT7taAptnMPbs=\""
+          "Value": "W/\"5tYg1RASKqHljxlITVjqDU+P0BzT/ZWv6Dh0zfMXPxY=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-aNPcLFwdCCGS2v1guSR64Htd4Ly5uclT7taAptnMPbs="
+          "Value": "sha256-5tYg1RASKqHljxlITVjqDU+P0BzT/ZWv6Dh0zfMXPxY="
         }
       ]
     },
@@ -2079,7 +2079,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2900"
+          "Value": "550"
         },
         {
           "Name": "Content-Type",
@@ -2087,11 +2087,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"aNPcLFwdCCGS2v1guSR64Htd4Ly5uclT7taAptnMPbs=\""
+          "Value": "\"5tYg1RASKqHljxlITVjqDU+P0BzT/ZWv6Dh0zfMXPxY=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 16 Sep 2025 06:52:41 GMT"
+          "Value": "Tue, 16 Sep 2025 11:31:05 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2101,13 +2101,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-aNPcLFwdCCGS2v1guSR64Htd4Ly5uclT7taAptnMPbs="
+          "Value": "sha256-5tYg1RASKqHljxlITVjqDU+P0BzT/ZWv6Dh0zfMXPxY="
         }
       ]
     },
     {
       "Route": "app.css.gz",
-      "AssetFile": "C:\\Users\\Manuel Gruber\\Documents\\GitHub\\LiftArc\\LiftArc\\LiftArc\\obj\\Debug\\net9.0\\compressed\\xd0hijejxd-khy4lop6wu.gz",
+      "AssetFile": "C:\\Users\\Manuel Gruber\\Documents\\GitHub\\LiftArc\\LiftArc\\LiftArc\\obj\\Debug\\net9.0\\compressed\\xd0hijejxd-mdfhhglae7.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2116,7 +2116,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1571"
+          "Value": "263"
         },
         {
           "Name": "Content-Type",
@@ -2124,11 +2124,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"KfTtGgOr4gFqWP6bDC3erwKnY0fchsCFGM8SFQeyGO0=\""
+          "Value": "\"1UjRDPvkDQnc4StNagL/0UFkw43i3YrR4E41/D3xa64=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 16 Sep 2025 06:52:41 GMT"
+          "Value": "Tue, 16 Sep 2025 11:31:05 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2146,18 +2146,18 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-KfTtGgOr4gFqWP6bDC3erwKnY0fchsCFGM8SFQeyGO0="
+          "Value": "sha256-1UjRDPvkDQnc4StNagL/0UFkw43i3YrR4E41/D3xa64="
         }
       ]
     },
     {
-      "Route": "app.khy4lop6wu.css",
-      "AssetFile": "C:\\Users\\Manuel Gruber\\Documents\\GitHub\\LiftArc\\LiftArc\\LiftArc\\obj\\Debug\\net9.0\\compressed\\xd0hijejxd-khy4lop6wu.gz",
+      "Route": "app.mdfhhglae7.css",
+      "AssetFile": "C:\\Users\\Manuel Gruber\\Documents\\GitHub\\LiftArc\\LiftArc\\LiftArc\\obj\\Debug\\net9.0\\compressed\\xd0hijejxd-mdfhhglae7.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000636132316"
+          "Quality": "0.003787878788"
         }
       ],
       "ResponseHeaders": [
@@ -2167,15 +2167,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1571"
+          "Value": "263"
         },
         {
           "Name": "ETag",
-          "Value": "\"KfTtGgOr4gFqWP6bDC3erwKnY0fchsCFGM8SFQeyGO0=\""
+          "Value": "\"1UjRDPvkDQnc4StNagL/0UFkw43i3YrR4E41/D3xa64=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 16 Sep 2025 06:52:41 GMT"
+          "Value": "Tue, 16 Sep 2025 11:31:05 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2195,13 +2195,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"aNPcLFwdCCGS2v1guSR64Htd4Ly5uclT7taAptnMPbs=\""
+          "Value": "W/\"5tYg1RASKqHljxlITVjqDU+P0BzT/ZWv6Dh0zfMXPxY=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "khy4lop6wu"
+          "Value": "mdfhhglae7"
         },
         {
           "Name": "label",
@@ -2209,12 +2209,12 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-aNPcLFwdCCGS2v1guSR64Htd4Ly5uclT7taAptnMPbs="
+          "Value": "sha256-5tYg1RASKqHljxlITVjqDU+P0BzT/ZWv6Dh0zfMXPxY="
         }
       ]
     },
     {
-      "Route": "app.khy4lop6wu.css",
+      "Route": "app.mdfhhglae7.css",
       "AssetFile": "C:\\Users\\Manuel Gruber\\Documents\\GitHub\\LiftArc\\LiftArc\\LiftArc\\wwwroot\\app.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -2224,7 +2224,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2900"
+          "Value": "550"
         },
         {
           "Name": "Content-Type",
@@ -2232,11 +2232,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"aNPcLFwdCCGS2v1guSR64Htd4Ly5uclT7taAptnMPbs=\""
+          "Value": "\"5tYg1RASKqHljxlITVjqDU+P0BzT/ZWv6Dh0zfMXPxY=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 16 Sep 2025 06:52:41 GMT"
+          "Value": "Tue, 16 Sep 2025 11:31:05 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2246,7 +2246,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "khy4lop6wu"
+          "Value": "mdfhhglae7"
         },
         {
           "Name": "label",
@@ -2254,13 +2254,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-aNPcLFwdCCGS2v1guSR64Htd4Ly5uclT7taAptnMPbs="
+          "Value": "sha256-5tYg1RASKqHljxlITVjqDU+P0BzT/ZWv6Dh0zfMXPxY="
         }
       ]
     },
     {
-      "Route": "app.khy4lop6wu.css.gz",
-      "AssetFile": "C:\\Users\\Manuel Gruber\\Documents\\GitHub\\LiftArc\\LiftArc\\LiftArc\\obj\\Debug\\net9.0\\compressed\\xd0hijejxd-khy4lop6wu.gz",
+      "Route": "app.mdfhhglae7.css.gz",
+      "AssetFile": "C:\\Users\\Manuel Gruber\\Documents\\GitHub\\LiftArc\\LiftArc\\LiftArc\\obj\\Debug\\net9.0\\compressed\\xd0hijejxd-mdfhhglae7.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2269,7 +2269,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1571"
+          "Value": "263"
         },
         {
           "Name": "Content-Type",
@@ -2277,11 +2277,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"KfTtGgOr4gFqWP6bDC3erwKnY0fchsCFGM8SFQeyGO0=\""
+          "Value": "\"1UjRDPvkDQnc4StNagL/0UFkw43i3YrR4E41/D3xa64=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 16 Sep 2025 06:52:41 GMT"
+          "Value": "Tue, 16 Sep 2025 11:31:05 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2299,7 +2299,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "khy4lop6wu"
+          "Value": "mdfhhglae7"
         },
         {
           "Name": "label",
@@ -2307,7 +2307,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-KfTtGgOr4gFqWP6bDC3erwKnY0fchsCFGM8SFQeyGO0="
+          "Value": "sha256-1UjRDPvkDQnc4StNagL/0UFkw43i3YrR4E41/D3xa64="
         }
       ]
     },
