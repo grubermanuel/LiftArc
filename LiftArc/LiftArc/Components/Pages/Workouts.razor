@@ -1,0 +1,58 @@
+@page "/workouts"
+@using LiftArc.Models 
+@using LiftArc.Services 
+@inject WorkoutService WorkoutService
+
+
+<PageTitle>LiftArcProj - Trainingspläne</PageTitle>
+
+<div class="main-container">
+    <header class="header">
+        <h1>🏋️ LiftArcProj Trainingspläne</h1>
+    </header>
+
+    <div class="workout-list">
+        @if (workouts == null)
+        {
+            <p>Lade Trainingspläne...</p>
+        }
+        else if (!workouts.Any())
+        {
+            <p>Keine Trainingspläne gefunden.</p>
+        }
+        else
+        {
+            @foreach (var workout in workouts)
+            {
+                <div class="workout-card">
+                    <h2>@workout.Name</h2>
+                    <p>@workout.Description</p>
+                    <button class="btn-neon" @onclick="() => StartWorkout(workout.Id)">Start</button>
+                </div>
+            }
+        }
+    </div>
+
+    <button class="btn-neon" @onclick="CreateNewWorkout">+ Neuer Trainingsplan</button>
+</div>
+
+@code {
+    private List<WorkoutPlan> workouts; // ✅ Feldname klein, kein Konflikt
+
+    protected override async Task OnInitializedAsync()
+    {
+        workouts = await WorkoutService.GetAllWorkoutsAsync();
+    }
+
+    private void StartWorkout(int workoutId)
+    {
+        Console.WriteLine($"Workout {workoutId} gestartet!");
+    }
+
+    private void CreateNewWorkout()
+    {
+        var newWorkout = new WorkoutPlan { Name = "Neuer Plan", Description = "Beschreibung" };
+        WorkoutService.AddWorkoutAsync(newWorkout);
+        workouts.Add(newWorkout);
+    }
+}
