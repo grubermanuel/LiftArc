@@ -1,6 +1,9 @@
 @page "/dashboard"
 @rendermode InteractiveServer
 @using BlazorBootstrap;
+@using Npgsql;
+@using System.Collections.Generic;
+
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 <link href="_content/Blazor.Bootstrap/blazor.bootstrap.css" rel="stylesheet" />
@@ -43,7 +46,7 @@
         </div>
         <div class="card">
             <h3>Streak</h3>
-            <p class="value">7</p>
+            <p class="value">@streak</p>
             <p class="desc">Tage in Folge</p>
         </div>
     </div>
@@ -131,25 +134,68 @@
 </div>
 
 @code {
-    ProgressBar progressBar = default!;
+private long? streak;
+// PostgreSQL-Verbindungsstring
+protected override void OnInitialized()
+{
+LoadWorkoutStreak();
+}
 
-    private void IncreaseProgressBar()
-    {
-        progressBar.IncreaseWidth(10);
-        progressBar.SetLabel($"{progressBar.GetWidth()}%");
-    }
+private void LoadWorkoutStreak()
+{
+string connString = "Host=localhost;Port=5432;Database=liftarc;Username=liftarcuser;Password=liftarcpass";
+int userId = 1;
 
-    private void DecreaseProgressBar()
-    {
-        progressBar.DecreaseWidth(10);
-        progressBar.SetLabel($"{progressBar.GetWidth()}%");
-    }
+using (var conn = new NpgsqlConnection(connString))
+{
+conn.Open();
 
-    private void ResetProgressBar()
-    {
-        progressBar.SetWidth(0);
-        progressBar.SetLabel($"{progressBar.GetWidth()}%");
-    }
+string sql = @"
+WITH user_dates AS (
+    SELECT DISTINCT
+        user_id,
+        DATE(performed_at) AS workout_day
+    FROM user_workouts
+    WHERE user_id = @userId
+),
+ranked AS (
+    SELECT
+        workout_day,
+        ROW_NUMBER() OVER (ORDER BY workout_day) AS rn
+    FROM user_dates
+)
+SELECT COUNT(*) AS streak_days
+FROM ranked
+WHERE workout_day >= CURRENT_DATE - (ranked.rn - 1) * INTERVAL '1 day';
+";
+
+using (var cmd = new NpgsqlCommand(sql, conn))
+{
+cmd.Parameters.AddWithValue("userId", NpgsqlTypes.NpgsqlDbType.Integer, userId);
+object result = cmd.ExecuteScalar();
+streak = Convert.ToInt64(result);
+}
+}
+}
+ProgressBar progressBar = default!;
+
+private void IncreaseProgressBar()
+{
+progressBar.IncreaseWidth(10);
+progressBar.SetLabel($"{progressBar.GetWidth()}%");
+}
+
+private void DecreaseProgressBar()
+{
+progressBar.DecreaseWidth(10);
+progressBar.SetLabel($"{progressBar.GetWidth()}%");
+}
+
+private void ResetProgressBar()
+{
+progressBar.SetWidth(0);
+progressBar.SetLabel($"{progressBar.GetWidth()}%");
+}
 }
 
 <style>
