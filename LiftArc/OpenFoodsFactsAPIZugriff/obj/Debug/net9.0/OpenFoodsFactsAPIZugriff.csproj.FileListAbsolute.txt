@@ -1,0 +1,15 @@
+C:\Users\kilia\OneDrive\Dokumente\GitHub\LiftArc\LiftArc\OpenFoodsFactsAPIZugriff\bin\Debug\net9.0\OpenFoodsFactsAPIZugriff.exe
+C:\Users\kilia\OneDrive\Dokumente\GitHub\LiftArc\LiftArc\OpenFoodsFactsAPIZugriff\bin\Debug\net9.0\OpenFoodsFactsAPIZugriff.deps.json
+C:\Users\kilia\OneDrive\Dokumente\GitHub\LiftArc\LiftArc\OpenFoodsFactsAPIZugriff\bin\Debug\net9.0\OpenFoodsFactsAPIZugriff.runtimeconfig.json
+C:\Users\kilia\OneDrive\Dokumente\GitHub\LiftArc\LiftArc\OpenFoodsFactsAPIZugriff\bin\Debug\net9.0\OpenFoodsFactsAPIZugriff.dll
+C:\Users\kilia\OneDrive\Dokumente\GitHub\LiftArc\LiftArc\OpenFoodsFactsAPIZugriff\bin\Debug\net9.0\OpenFoodsFactsAPIZugriff.pdb
+C:\Users\kilia\OneDrive\Dokumente\GitHub\LiftArc\LiftArc\OpenFoodsFactsAPIZugriff\obj\Debug\net9.0\OpenFoodsFactsAPIZugriff.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kilia\OneDrive\Dokumente\GitHub\LiftArc\LiftArc\OpenFoodsFactsAPIZugriff\obj\Debug\net9.0\OpenFoodsFactsAPIZugriff.AssemblyInfoInputs.cache
+C:\Users\kilia\OneDrive\Dokumente\GitHub\LiftArc\LiftArc\OpenFoodsFactsAPIZugriff\obj\Debug\net9.0\OpenFoodsFactsAPIZugriff.AssemblyInfo.cs
+C:\Users\kilia\OneDrive\Dokumente\GitHub\LiftArc\LiftArc\OpenFoodsFactsAPIZugriff\obj\Debug\net9.0\OpenFoodsFactsAPIZugriff.csproj.CoreCompileInputs.cache
+C:\Users\kilia\OneDrive\Dokumente\GitHub\LiftArc\LiftArc\OpenFoodsFactsAPIZugriff\obj\Debug\net9.0\OpenFoodsFactsAPIZugriff.sourcelink.json
+C:\Users\kilia\OneDrive\Dokumente\GitHub\LiftArc\LiftArc\OpenFoodsFactsAPIZugriff\obj\Debug\net9.0\OpenFoodsFactsAPIZugriff.dll
+C:\Users\kilia\OneDrive\Dokumente\GitHub\LiftArc\LiftArc\OpenFoodsFactsAPIZugriff\obj\Debug\net9.0\refint\OpenFoodsFactsAPIZugriff.dll
+C:\Users\kilia\OneDrive\Dokumente\GitHub\LiftArc\LiftArc\OpenFoodsFactsAPIZugriff\obj\Debug\net9.0\OpenFoodsFactsAPIZugriff.pdb
+C:\Users\kilia\OneDrive\Dokumente\GitHub\LiftArc\LiftArc\OpenFoodsFactsAPIZugriff\obj\Debug\net9.0\OpenFoodsFactsAPIZugriff.genruntimeconfig.cache
+C:\Users\kilia\OneDrive\Dokumente\GitHub\LiftArc\LiftArc\OpenFoodsFactsAPIZugriff\obj\Debug\net9.0\ref\OpenFoodsFactsAPIZugriff.dll

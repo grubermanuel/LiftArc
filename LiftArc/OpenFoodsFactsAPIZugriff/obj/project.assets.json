@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kilia\\OneDrive\\Dokumente\\GitHub\\LiftArc\\LiftArc\\LiftArc\\LiftArc.csproj",
-      "projectName": "LiftArc",
-      "projectPath": "C:\\Users\\kilia\\OneDrive\\Dokumente\\GitHub\\LiftArc\\LiftArc\\LiftArc\\LiftArc.csproj",
+      "projectUniqueName": "C:\\Users\\kilia\\OneDrive\\Dokumente\\GitHub\\LiftArc\\LiftArc\\OpenFoodsFactsAPIZugriff\\OpenFoodsFactsAPIZugriff.csproj",
+      "projectName": "OpenFoodsFactsAPIZugriff",
+      "projectPath": "C:\\Users\\kilia\\OneDrive\\Dokumente\\GitHub\\LiftArc\\LiftArc\\OpenFoodsFactsAPIZugriff\\OpenFoodsFactsAPIZugriff.csproj",
       "packagesPath": "C:\\Users\\kilia\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kilia\\OneDrive\\Dokumente\\GitHub\\LiftArc\\LiftArc\\LiftArc\\obj\\",
+      "outputPath": "C:\\Users\\kilia\\OneDrive\\Dokumente\\GitHub\\LiftArc\\LiftArc\\OpenFoodsFactsAPIZugriff\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -69,9 +69,6 @@
         "assetTargetFallback": true,
         "warn": true,
         "frameworkReferences": {
-          "Microsoft.AspNetCore.App": {
-            "privateAssets": "none"
-          },
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }

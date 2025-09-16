@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\kilia\\OneDrive\\Dokumente\\GitHub\\LiftArc\\LiftArc\\LiftArc\\LiftArc.csproj": {}
+    "C:\\Users\\kilia\\OneDrive\\Dokumente\\GitHub\\LiftArc\\LiftArc\\DatenbankzugriffTest\\DatenbankzugriffTest.csproj": {}
   },
   "projects": {
-    "C:\\Users\\kilia\\OneDrive\\Dokumente\\GitHub\\LiftArc\\LiftArc\\LiftArc\\LiftArc.csproj": {
+    "C:\\Users\\kilia\\OneDrive\\Dokumente\\GitHub\\LiftArc\\LiftArc\\DatenbankzugriffTest\\DatenbankzugriffTest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kilia\\OneDrive\\Dokumente\\GitHub\\LiftArc\\LiftArc\\LiftArc\\LiftArc.csproj",
-        "projectName": "LiftArc",
-        "projectPath": "C:\\Users\\kilia\\OneDrive\\Dokumente\\GitHub\\LiftArc\\LiftArc\\LiftArc\\LiftArc.csproj",
+        "projectUniqueName": "C:\\Users\\kilia\\OneDrive\\Dokumente\\GitHub\\LiftArc\\LiftArc\\DatenbankzugriffTest\\DatenbankzugriffTest.csproj",
+        "projectName": "DatenbankzugriffTest",
+        "projectPath": "C:\\Users\\kilia\\OneDrive\\Dokumente\\GitHub\\LiftArc\\LiftArc\\DatenbankzugriffTest\\DatenbankzugriffTest.csproj",
         "packagesPath": "C:\\Users\\kilia\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kilia\\OneDrive\\Dokumente\\GitHub\\LiftArc\\LiftArc\\LiftArc\\obj\\",
+        "outputPath": "C:\\Users\\kilia\\OneDrive\\Dokumente\\GitHub\\LiftArc\\LiftArc\\DatenbankzugriffTest\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -50,6 +50,12 @@
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
+          "dependencies": {
+            "Npgsql": {
+              "target": "Package",
+              "version": "[9.0.3, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -62,9 +68,6 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
