@@ -1,0 +1,409 @@
+@page "/dashboard"
+@rendermode InteractiveServer
+@using BlazorBootstrap;
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+<link href="_content/Blazor.Bootstrap/blazor.bootstrap.css" rel="stylesheet" />
+<div class="app-container">
+    <!-- Header -->
+    <div class="app-header">
+        <h1 class="logo">FitTracker</h1>
+        <p class="subtitle">Deine persönliche Fitness- und Ernährungs-App</p>
+    </div>
+
+    <!-- Tabs -->
+    <div class="tabs">
+        <button class="tab active">📊 Dashboard</button>
+        <button class="tab">🏋️ Workout</button>
+        <button class="tab">🍎 Ernährung</button>
+    </div>
+
+    <!-- Willkommen -->
+    <div class="welcome">
+        <h2>Willkommen zurück <span class="highlight">Kilian</span> !</h2>
+        <p>Hier ist dein Fitness-Überblick für heute</p>
+    </div>
+
+    <!-- Übersicht Karten -->
+    <div class="cards">
+        <div class="card">
+            <h3>Workouts</h3>
+            <p class="value">1</p>
+            <p class="desc">heute abgeschlossen</p>
+        </div>
+        <div class="card">
+            <h3>Übungen</h3>
+            <p class="value">5</p>
+            <p class="desc">15 Sätze insgesamt</p>
+        </div>
+        <div class="card">
+            <h3>Kalorien</h3>
+            <p class="value">1850</p>
+            <p class="desc">von 2200 Ziel</p>
+        </div>
+        <div class="card">
+            <h3>Streak</h3>
+            <p class="value">7</p>
+            <p class="desc">Tage in Folge</p>
+        </div>
+    </div>
+
+    <!-- Fortschritt -->
+    <div class="progress-section">
+        <!-- Tägliche Ziele -->
+        <div class="progress-card">
+            <h3>Tägliche Ziele</h3>
+
+            <p>Kalorien</p>
+            <Progress Class="mb-3">
+                <ProgressBar @ref="progressBar" Width="80" />
+            </Progress>
+
+            <p class="desc">1850/2200</p>
+
+            <p>Protein</p>
+            <Progress Class="mb-3">
+                <ProgressBar @ref="progressBar" Width="80" />
+            </Progress>
+            <p class="desc">125g/150g</p>
+        </div>
+
+        <!-- Wöchentlicher Fortschritt -->
+        <div class="progress-card">
+            <h3>Wöchentlicher Fortschritt</h3>
+
+            <p>Workouts</p>
+            <Progress Class="mb-3">
+                <ProgressBar @ref="progressBar" Width="80" />
+            </Progress>
+            <p class="desc">4/5</p>
+
+            <div class="stats">
+                <span><div class="weekly-value">2050</div>Ø Kalorien/Tag</span>
+                <span><div class="weekly-value">140g</div>Ø Protein/Tag</span>
+            </div>
+        </div>
+    </div>
+    <!-- Letzte Workouts -->
+    <div class="workouts-section">
+        <h3 class="section-title">Letzte Workouts</h3>
+
+        <div class="workout-card">
+            <div class="workout-info">
+                <i class="bi bi-activity icon"></i>
+                <div>
+                    <p class="workout-title">Push Training</p>
+                    <p class="workout-sub">6 Übungen</p>
+                </div>
+            </div>
+            <span class="workout-time">Heute</span>
+        </div>
+
+        <div class="workout-card">
+            <div class="workout-info">
+                <i class="bi bi-activity icon"></i>
+                <div>
+                    <p class="workout-title">Pull Training</p>
+                    <p class="workout-sub">5 Übungen</p>
+                </div>
+            </div>
+            <span class="workout-time">Gestern</span>
+        </div>
+
+        <div class="workout-card">
+            <div class="workout-info">
+                <i class="bi bi-activity icon"></i>
+                <div>
+                    <p class="workout-title">Beine</p>
+                    <p class="workout-sub">7 Übungen</p>
+                </div>
+            </div>
+            <span class="workout-time">Vorgestern</span>
+        </div>
+    </div>
+
+    <!-- Streak Banner -->
+    <div class="streak-banner">
+        <strong>Großartige Arbeit! 💪</strong>
+        <p>Du bist auf einem <span class="highlight">7-tägigen</span> Streak. Bleib dran und erreiche deine Ziele!</p>
+    </div>
+
+</div>
+
+@code {
+    ProgressBar progressBar = default!;
+
+    private void IncreaseProgressBar()
+    {
+        progressBar.IncreaseWidth(10);
+        progressBar.SetLabel($"{progressBar.GetWidth()}%");
+    }
+
+    private void DecreaseProgressBar()
+    {
+        progressBar.DecreaseWidth(10);
+        progressBar.SetLabel($"{progressBar.GetWidth()}%");
+    }
+
+    private void ResetProgressBar()
+    {
+        progressBar.SetWidth(0);
+        progressBar.SetLabel($"{progressBar.GetWidth()}%");
+    }
+}
+
+<style>
+    /* ========== Base Layout ========== */
+    .app-container {
+        min-height: 100vh;
+        background: #000;
+        color: #fff;
+        font-family: 'Segoe UI', Arial, sans-serif;
+        padding: 2rem;
+    }
+
+    /* ========== Header ========== */
+    .app-header {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    .logo {
+        color: #39ff14;
+        font-size: 2rem;
+        font-weight: bold;
+        margin: 0;
+    }
+    .subtitle {
+        color: #aaa;
+        font-size: 1rem;
+    }
+
+    /* ========== Tabs ========== */
+    .tabs {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 2.5rem;
+        background: #111;
+        border-radius: 999px;
+        overflow: hidden;
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .tab {
+        padding: 0.6rem 2rem;
+        border: none;
+        background: transparent;
+        color: #ccc;
+        cursor: pointer;
+        font-weight: 500;
+        transition: all 0.2s ease-in-out;
+    }
+    .tab:hover {
+        background: #222;
+    }
+    .tab.active {
+        background: #39ff14;
+        color: #000;
+        font-weight: bold;
+    }
+
+    /* ========== Welcome Section ========== */
+    .welcome {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    .welcome h2 {
+        font-size: 1.6rem;
+        margin-bottom: 0.3rem;
+    }
+    .highlight {
+        color: #39ff14;
+    }
+
+    /* ========== Cards Overview ========== */
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+    .card {
+        background: #111;
+        border-radius: 12px;
+        padding: 1.2rem;
+        text-align: center;
+        transition: transform 0.2s;
+    }
+    .card:hover {
+        transform: translateY(-3px);
+    }
+    .card h3 {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+        color: #39ff14;
+    }
+    .card .value {
+        font-size: 1.8rem;
+        font-weight: bold;
+        margin: 0;
+        color: #39ff14;
+    }
+    .weekly-value{
+        color: #39ff14;
+        font-size: 1.2rem;
+    }
+    .card .desc {
+        font-size: 0.9rem;
+        color: #aaa;
+    }
+
+    /* ========== Progress Section ========== */
+    .progress-section {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+    }
+    .progress-card {
+        background: #111;
+        border-radius: 12px;
+        padding: 1.2rem;
+    }
+    .progress-card h3 {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+        color: #39ff14;
+    }
+    .progress-card p {
+        margin: 0.5rem 0 0.3rem;
+    }
+    .progress-card .desc {
+        font-size: 0.85rem;
+        color: #aaa;
+    }
+    .stats {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 1rem;
+        font-size: 0.85rem;
+        color: #ccc;
+    }
+
+    /* ========== Workouts Section ========== */
+    .workouts-section {
+        background: #111;
+        border-radius: 12px;
+        padding: 1.2rem;
+        margin-top: 2rem;
+    }
+    .section-title {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+        color: #39ff14;
+    }
+    .workout-card {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #1a1a1a;
+        border-radius: 10px;
+        padding: 0.8rem 1rem;
+        margin-bottom: 0.8rem;
+    }
+    .workout-info {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+    }
+    .icon {
+        font-size: 1.5rem;
+        color: #39ff14;
+    }
+    .workout-title {
+        margin: 0;
+        font-weight: bold;
+        color: #fff;
+    }
+    .workout-sub {
+        margin: 0;
+        font-size: 0.85rem;
+        color: #aaa;
+    }
+    .workout-time {
+        background: #222;
+        padding: 0.3rem 0.8rem;
+        border-radius: 999px;
+        font-size: 0.75rem;
+        color: #ccc;
+    }
+
+    /* ========== Streak Banner ========== */
+    .streak-banner {
+        background: linear-gradient(90deg, #003300, #004d00);
+        border-radius: 12px;
+        padding: 1.2rem;
+        text-align: center;
+        margin-top: 1.5rem;
+        color: #39ff14;
+        font-size: 1rem;
+    }
+    .streak-banner strong {
+        display: block;
+        font-size: 1.2rem;
+        margin-bottom: 0.3rem;
+    }
+    .streak-banner p {
+        margin: 0;
+        font-size: 0.9rem;
+        color: #ccc;
+    }
+    .streak-banner .highlight {
+        color: #39ff14;
+        font-weight: bold;
+    }
+    .top-row[b-b6atqywvr7], article[b-b6atqywvr7] {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    /* Scrollbar Styling (WebKit-Browser wie Chrome, Edge, Safari) */
+    ::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: #111;   /* Hintergrund der Leiste */
+        border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #39ff14; /* Grüne Scrollbar */
+        border-radius: 10px;
+        transition: background 0.3s ease;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #66ff44; /* Hellgrün beim Hover */
+    }
+
+    /* Scrollbar in Firefox */
+    * {
+        scrollbar-width: thin;
+        scrollbar-color: #39ff14 #111;
+    }
+    /* Progress-Bar Styling */
+    .progress {
+        background-color: #222 !important;   /* dunkler Hintergrund */
+        border-radius: 8px;
+        height: 18px;
+    }
+
+    .progress-bar {
+        background-color: #39ff14 !important; /* grüner Balken */
+        font-weight: bold;
+        color: #000;                          /* schwarze Schrift auf grün */
+        border-radius: 8px;
+        transition: width 0.3s ease-in-out;
+    }
+</style>
