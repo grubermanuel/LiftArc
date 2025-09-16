@@ -10,12 +10,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("LiftArc")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("DatenbankzugriffTest")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7d96864477cee596009f6421b8cdaf37d2abb1dc")]
-[assembly: System.Reflection.AssemblyProductAttribute("LiftArc")]
-[assembly: System.Reflection.AssemblyTitleAttribute("LiftArc")]
+[assembly: System.Reflection.AssemblyProductAttribute("DatenbankzugriffTest")]
+[assembly: System.Reflection.AssemblyTitleAttribute("DatenbankzugriffTest")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Von der MSBuild WriteCodeFragment-Klasse generiert.
