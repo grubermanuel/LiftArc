@@ -1,0 +1,56 @@
+# =========================
+# Visual Studio / .NET
+# =========================
+
+# Build-Ordner
+bin/
+obj/
+out/
+
+# NuGet-Pakete
+*.nupkg
+packages/
+.nuget/
+
+# User-spezifische Dateien
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.vs/
+
+# Resharper / Rider / JetBrains
+_ReSharper*/
+*.DotSettings.user
+.idea/
+
+# Visual Studio Code
+.vscode/
+
+# Publish / Deployment
+publish/
+wwwroot/
+*.deploy
+*.zip
+*.vsix
+
+# Blazor WebAssembly / Client Build
+wwwroot/_framework/
+wwwroot/_bin/
+wwwroot/blazor.boot.json
+wwwroot/service-worker.js
+wwwroot/service-worker.published.js
+
+# Logs
+*.log
+
+# OS-spezifisch
+.DS_Store
+Thumbs.db
+
+# Secret / Config / Credentials
+appsettings.*.json
+secrets.json
+*.pfx
+*.key
+*.cer
