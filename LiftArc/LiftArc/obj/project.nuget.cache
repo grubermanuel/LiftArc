@@ -1,8 +1,23 @@
 {
   "version": 2,
-  "dgSpecHash": "Qwy+tWHUKng=",
+  "dgSpecHash": "L1CX+TPeIOA=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Manuel Gruber\\Documents\\GitHub\\LiftArc\\LiftArc\\LiftArc\\LiftArc.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\kilia\\OneDrive\\Dokumente\\GitHub\\LiftArc\\LiftArc\\LiftArc\\LiftArc.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\kilia\\.nuget\\packages\\blazor.bootstrap\\3.4.0\\blazor.bootstrap.3.4.0.nupkg.sha512",
+    "C:\\Users\\kilia\\.nuget\\packages\\microsoft.aspnetcore.authorization\\9.0.0\\microsoft.aspnetcore.authorization.9.0.0.nupkg.sha512",
+    "C:\\Users\\kilia\\.nuget\\packages\\microsoft.aspnetcore.components\\9.0.0\\microsoft.aspnetcore.components.9.0.0.nupkg.sha512",
+    "C:\\Users\\kilia\\.nuget\\packages\\microsoft.aspnetcore.components.analyzers\\9.0.0\\microsoft.aspnetcore.components.analyzers.9.0.0.nupkg.sha512",
+    "C:\\Users\\kilia\\.nuget\\packages\\microsoft.aspnetcore.components.forms\\9.0.0\\microsoft.aspnetcore.components.forms.9.0.0.nupkg.sha512",
+    "C:\\Users\\kilia\\.nuget\\packages\\microsoft.aspnetcore.components.web\\9.0.0\\microsoft.aspnetcore.components.web.9.0.0.nupkg.sha512",
+    "C:\\Users\\kilia\\.nuget\\packages\\microsoft.aspnetcore.metadata\\9.0.0\\microsoft.aspnetcore.metadata.9.0.0.nupkg.sha512",
+    "C:\\Users\\kilia\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\9.0.0\\microsoft.extensions.dependencyinjection.9.0.0.nupkg.sha512",
+    "C:\\Users\\kilia\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\9.0.0\\microsoft.extensions.dependencyinjection.abstractions.9.0.0.nupkg.sha512",
+    "C:\\Users\\kilia\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\9.0.0\\microsoft.extensions.logging.abstractions.9.0.0.nupkg.sha512",
+    "C:\\Users\\kilia\\.nuget\\packages\\microsoft.extensions.options\\9.0.0\\microsoft.extensions.options.9.0.0.nupkg.sha512",
+    "C:\\Users\\kilia\\.nuget\\packages\\microsoft.extensions.primitives\\9.0.0\\microsoft.extensions.primitives.9.0.0.nupkg.sha512",
+    "C:\\Users\\kilia\\.nuget\\packages\\microsoft.jsinterop\\9.0.0\\microsoft.jsinterop.9.0.0.nupkg.sha512",
+    "C:\\Users\\kilia\\.nuget\\packages\\npgsql\\9.0.3\\npgsql.9.0.3.nupkg.sha512"
+  ],
   "logs": []
 }
