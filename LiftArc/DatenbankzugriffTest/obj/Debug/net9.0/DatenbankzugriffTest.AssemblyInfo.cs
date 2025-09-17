@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DatenbankzugriffTest")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+055f0e34299d5da572de06132d1f8a877c44c58f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1686b7bc7c8e743d1ce66ed4712fd86fc3f5f7f9")]
 [assembly: System.Reflection.AssemblyProductAttribute("DatenbankzugriffTest")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DatenbankzugriffTest")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

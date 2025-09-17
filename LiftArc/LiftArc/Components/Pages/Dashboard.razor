@@ -10,7 +10,7 @@
 <div class="app-container">
     <!-- Header -->
     <div class="app-header">
-        <h1 class="logo">FitTracker</h1>
+        <h1 class="logo">LiftArc</h1>
         <p class="subtitle">Deine persönliche Fitness- und Ernährungs-App</p>
     </div>
 
@@ -30,14 +30,14 @@
     <!-- Übersicht Karten -->
     <div class="cards">
         <div class="card">
-            <h3>Workouts</h3>
-            <p class="value">1</p>
-            <p class="desc">heute abgeschlossen</p>
+            <h3>Übungen</h3>
+            <p class="value">@exercisesToday</p>
+            <p class="desc">@setsToday Sätze insgesamt</p>
         </div>
         <div class="card">
-            <h3>Übungen</h3>
-            <p class="value">5</p>
-            <p class="desc">15 Sätze insgesamt</p>
+            <h3>Gewicht</h3>
+            <p class="value">@totalWeightToday</p>
+            <p class="desc">heute bewegt</p>
         </div>
         <div class="card">
             <h3>Kalorien</h3>
@@ -126,24 +126,117 @@
     </div>
 
     <!-- Streak Banner -->
-    <div class="streak-banner">
+    <div class="streak-banner @GetStreakClass()">
         <strong>Großartige Arbeit! 💪</strong>
-        <p>Du bist auf einem <span class="highlight">7-tägigen</span> Streak. Bleib dran und erreiche deine Ziele!</p>
+        <p>Du bist auf einem <span class="highlight">@streak-tägigen</span> Streak. Bleib dran und erreiche deine Ziele!</p>
     </div>
 
 </div>
 
 @code {
-private long? streak;
+private long? streak=5;
+private long? setsToday;
+private decimal? totalWeightToday;
+private long? exercisesToday;
+
+private string connString = "Host=localhost;Port=5432;Database=liftarc;Username=liftarcuser;Password=liftarcpass";
+
+// Gibt die CSS-Klasse basierend auf der Streak-Länge zurück
+private string GetStreakClass()
+{
+    if (streak >= 21) return "streak-legendary";
+    if (streak >= 14) return "streak-great";
+    if (streak >= 7) return "streak-good";
+    return "streak-newbie";
+}
 // PostgreSQL-Verbindungsstring
 protected override void OnInitialized()
 {
-LoadWorkoutStreak();
+    //LoadWorkoutStreak();
+    LoadSetsToday();
+    LoadTotalWeightToday();
+    LoadExercisesToday();
+}
+
+private void LoadExercisesToday()
+{
+    int userId = 1;
+
+    using (var conn = new NpgsqlConnection(connString))
+    {
+        conn.Open();
+
+        string sql = @"
+SELECT COUNT(DISTINCT e.exercise_id) AS exercises_count
+FROM user_workout_exercises e
+JOIN user_workouts w ON e.user_workout_id = w.id
+WHERE w.user_id = @userId
+  AND DATE(w.performed_at) = CURRENT_DATE;
+";
+
+        using (var cmd = new NpgsqlCommand(sql, conn))
+        {
+            cmd.Parameters.AddWithValue("userId", NpgsqlTypes.NpgsqlDbType.Integer, userId);
+            object result = cmd.ExecuteScalar();
+            exercisesToday = Convert.ToInt64(result);
+        }
+    }
+}
+
+private void LoadSetsToday()
+{
+    int userId = 1;
+
+    using (var conn = new NpgsqlConnection(connString))
+    {
+        conn.Open();
+
+        string sql = @"
+SELECT COUNT(*) AS sets_count
+FROM user_exercise_sets s
+JOIN user_workout_exercises e ON s.user_workout_exercise_id = e.id
+JOIN user_workouts w ON e.user_workout_id = w.id
+WHERE w.user_id = @userId
+  AND DATE(w.performed_at) = CURRENT_DATE;
+";
+
+        using (var cmd = new NpgsqlCommand(sql, conn))
+        {
+            cmd.Parameters.AddWithValue("userId", NpgsqlTypes.NpgsqlDbType.Integer, userId);
+            object result = cmd.ExecuteScalar();
+            setsToday = Convert.ToInt64(result);
+        }
+    }
+}
+private void LoadTotalWeightToday()
+{
+    int userId = 1;
+
+    using (var conn = new NpgsqlConnection(connString))
+    {
+        conn.Open();
+
+        string sql = @"
+SELECT COALESCE(SUM(s.weight * s.reps), 0) AS total_weight
+FROM user_exercise_sets s
+JOIN user_workout_exercises e ON s.user_workout_exercise_id = e.id
+JOIN user_workouts w ON e.user_workout_id = w.id
+WHERE w.user_id = @userId
+  AND w.performed_at >= CURRENT_DATE
+  AND w.performed_at < CURRENT_DATE + INTERVAL '1 day';
+";
+
+        using (var cmd = new NpgsqlCommand(sql, conn))
+        {
+            cmd.Parameters.AddWithValue("userId", NpgsqlTypes.NpgsqlDbType.Integer, userId);
+            object result = cmd.ExecuteScalar();
+            totalWeightToday = Convert.ToDecimal(result);
+        }
+    }
 }
 
 private void LoadWorkoutStreak()
 {
-string connString = "Host=localhost;Port=5432;Database=liftarc;Username=liftarcuser;Password=liftarcpass";
 int userId = 1;
 
 using (var conn = new NpgsqlConnection(connString))
@@ -161,12 +254,12 @@ WITH user_dates AS (
 ranked AS (
     SELECT
         workout_day,
-        ROW_NUMBER() OVER (ORDER BY workout_day) AS rn
+        ROW_NUMBER() OVER (ORDER BY workout_day DESC) AS rn
     FROM user_dates
 )
 SELECT COUNT(*) AS streak_days
 FROM ranked
-WHERE workout_day >= CURRENT_DATE - (ranked.rn - 1) * INTERVAL '1 day';
+WHERE workout_day >= CURRENT_DATE - (rn - 1) * INTERVAL '1 day';
 ";
 
 using (var cmd = new NpgsqlCommand(sql, conn))
@@ -384,30 +477,6 @@ progressBar.SetLabel($"{progressBar.GetWidth()}%");
         color: #ccc;
     }
 
-    /* ========== Streak Banner ========== */
-    .streak-banner {
-        background: linear-gradient(90deg, #003300, #004d00);
-        border-radius: 12px;
-        padding: 1.2rem;
-        text-align: center;
-        margin-top: 1.5rem;
-        color: #39ff14;
-        font-size: 1rem;
-    }
-    .streak-banner strong {
-        display: block;
-        font-size: 1.2rem;
-        margin-bottom: 0.3rem;
-    }
-    .streak-banner p {
-        margin: 0;
-        font-size: 0.9rem;
-        color: #ccc;
-    }
-    .streak-banner .highlight {
-        color: #39ff14;
-        font-weight: bold;
-    }
     .top-row[b-b6atqywvr7], article[b-b6atqywvr7] {
         padding-left: 0 !important;
         padding-right: 0 !important;
@@ -452,4 +521,57 @@ progressBar.SetLabel($"{progressBar.GetWidth()}%");
         border-radius: 8px;
         transition: width 0.3s ease-in-out;
     }
+    /* ========== Streak Banner ========== */
+    .streak-banner {
+        border-radius: 12px;
+        padding: 1.5rem;
+        text-align: center;
+        font-size: 1rem;
+        color: #fff;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .streak-banner strong {
+        display: block;
+        font-size: 1.3rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .streak-banner p {
+        margin: 0;
+        font-size: 1rem;
+    }
+
+    .streak-banner .highlight {
+        font-weight: bold;
+    }
+
+    /* Verschiedene Streak-Level */
+
+    /* 7 Tage */
+    .streak-newbie {
+        background: linear-gradient(90deg, #222, #333);
+        color: #ccc;
+    }
+
+    /* 7–13 Tage */
+    .streak-good {
+        background: linear-gradient(90deg, #003300, #006600);
+        color: #39ff14;
+    }
+
+    /* 14–20 Tage */
+    .streak-great {
+        background: linear-gradient(90deg, #003366, #3399ff);
+        color: #fff;
+    }
+
+    /* 21+ Tage */
+    .streak-legendary {
+        background: linear-gradient(90deg, #660066, #ff33cc);
+        color: #fff;
+        box-shadow: 0 0 20px #ff33cc;
+        transform: scale(1.05);
+    }
+
 </style>
