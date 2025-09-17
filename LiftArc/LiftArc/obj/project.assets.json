@@ -605,32 +605,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\kilia\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\Manuel Gruber\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kilia\\OneDrive\\Dokumente\\GitHub\\LiftArc\\LiftArc\\LiftArc\\LiftArc.csproj",
+      "projectUniqueName": "C:\\Users\\Manuel Gruber\\Documents\\GitHub\\LiftArc\\LiftArc\\LiftArc\\LiftArc.csproj",
       "projectName": "LiftArc",
-      "projectPath": "C:\\Users\\kilia\\OneDrive\\Dokumente\\GitHub\\LiftArc\\LiftArc\\LiftArc\\LiftArc.csproj",
-      "packagesPath": "C:\\Users\\kilia\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kilia\\OneDrive\\Dokumente\\GitHub\\LiftArc\\LiftArc\\LiftArc\\obj\\",
+      "projectPath": "C:\\Users\\Manuel Gruber\\Documents\\GitHub\\LiftArc\\LiftArc\\LiftArc\\LiftArc.csproj",
+      "packagesPath": "C:\\Users\\Manuel Gruber\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Manuel Gruber\\Documents\\GitHub\\LiftArc\\LiftArc\\LiftArc\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\kilia\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\Manuel Gruber\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -647,9 +639,9 @@
       "restoreAuditProperties": {
         "enableAudit": "true",
         "auditLevel": "low",
-        "auditMode": "direct"
+        "auditMode": "all"
       },
-      "SdkAnalysisLevel": "9.0.200"
+      "SdkAnalysisLevel": "9.0.100"
     },
     "frameworks": {
       "net9.0": {
@@ -683,7 +675,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Users\\Manuel Gruber\\.dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

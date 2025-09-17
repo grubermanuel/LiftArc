@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LiftArc")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1686b7bc7c8e743d1ce66ed4712fd86fc3f5f7f9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8d51fefbaf330420025a51ab58e8aa2d18b38867")]
 [assembly: System.Reflection.AssemblyProductAttribute("LiftArc")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LiftArc")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
